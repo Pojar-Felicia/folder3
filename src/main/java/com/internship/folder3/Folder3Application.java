@@ -15,8 +15,7 @@ public class Folder3Application {
 
         ApplicationContext appContext = SpringApplication.run(Folder3Application.class, args);
         MyController myController = (MyController) appContext.getBean("myController");
-        myController.hello();
-
+        System.out.println(myController.hello());
         System.out.println(appContext.getBean(PropertyInjectedController.class).sayHello());
         System.out.println(appContext.getBean(GetterInjectedController.class).sayHello());
         System.out.println(appContext.getBean(ConstructorInjectedController.class).sayHello());
