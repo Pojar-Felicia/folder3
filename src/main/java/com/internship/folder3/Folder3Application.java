@@ -17,15 +17,10 @@ public class Folder3Application {
     public static void main(String[] args) {
 
         ApplicationContext appContext = SpringApplication.run(Folder3Application.class, args);
-        MyController myController = (MyController) appContext.getBean("myController");
 
-        FakeDataSource fakeDataSource = (FakeDataSource) appContext.getBean(FakeDataSource.class);
+        FakeDataSource fakeDataSource = appContext.getBean(FakeDataSource.class);
         System.out.println(fakeDataSource.getUser());
 
-//        System.out.println(myController.hello());
-//        System.out.println(appContext.getBean(PropertyInjectedController.class).sayHello());
-//        System.out.println(appContext.getBean(GetterInjectedController.class).sayHello());
-//        System.out.println(appContext.getBean(ConstructorInjectedController.class).sayHello());
-    }
+ }
 
 }
