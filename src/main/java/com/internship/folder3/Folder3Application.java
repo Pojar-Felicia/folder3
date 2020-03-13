@@ -4,6 +4,7 @@ import com.internship.folder3.controllers.ConstructorInjectedController;
 import com.internship.folder3.controllers.GetterInjectedController;
 import com.internship.folder3.controllers.MyController;
 import com.internship.folder3.controllers.PropertyInjectedController;
+import com.internship.folder3.exampleBeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,10 +18,14 @@ public class Folder3Application {
 
         ApplicationContext appContext = SpringApplication.run(Folder3Application.class, args);
         MyController myController = (MyController) appContext.getBean("myController");
-        System.out.println(myController.hello());
-        System.out.println(appContext.getBean(PropertyInjectedController.class).sayHello());
-        System.out.println(appContext.getBean(GetterInjectedController.class).sayHello());
-        System.out.println(appContext.getBean(ConstructorInjectedController.class).sayHello());
+
+        FakeDataSource fakeDataSource = (FakeDataSource) appContext.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUser());
+
+//        System.out.println(myController.hello());
+//        System.out.println(appContext.getBean(PropertyInjectedController.class).sayHello());
+//        System.out.println(appContext.getBean(GetterInjectedController.class).sayHello());
+//        System.out.println(appContext.getBean(ConstructorInjectedController.class).sayHello());
     }
 
 }
