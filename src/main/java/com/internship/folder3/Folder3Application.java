@@ -5,6 +5,7 @@ import com.internship.folder3.controllers.GetterInjectedController;
 import com.internship.folder3.controllers.MyController;
 import com.internship.folder3.controllers.PropertyInjectedController;
 import com.internship.folder3.exampleBeans.FakeDataSource;
+import com.internship.folder3.exampleBeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -21,6 +22,8 @@ public class Folder3Application {
         FakeDataSource fakeDataSource = appContext.getBean(FakeDataSource.class);
         System.out.println(fakeDataSource.getUser());
 
+        FakeJmsBroker fakeJmsBroker = appContext.getBean(FakeJmsBroker.class);
+        fakeJmsBroker.getUsername();
  }
 
 }
