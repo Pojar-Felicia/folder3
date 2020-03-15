@@ -23,7 +23,7 @@ public class Folder3Application {
         System.out.println(fakeDataSource.getUser());
 
         FakeJmsBroker fakeJmsBroker = appContext.getBean(FakeJmsBroker.class);
-        fakeJmsBroker.getUsername();
+        System.out.println(fakeJmsBroker.getUsername());
  }
 
 }
